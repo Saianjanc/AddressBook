@@ -6,13 +6,13 @@ class Person {
     private String phnNo;
     private int zipCode;
     private String relation;
-    private Relationship relationship;
+    private String relationship;
     public Person(String fname, String lname, String phnNo, int zipCode, String relation) {
         this.fname = fname;
         this.lname = lname;
         this.phnNo = phnNo;
         this.zipCode = zipCode;
-        this.relationship = Relationship.fromString(relation);
+        this.relationship = relation;
     }
 
     @Override
@@ -66,37 +66,11 @@ class Person {
         this.relation = relation;
     }
 
-    public void setRelationship(Relationship relationship) {
+    public void setRelationship(String relationship) {
         this.relationship = relationship;
     }
 
-    public Relationship getRelationship() {
+    public String getRelationship() {
         return relationship;
-    }
-}
-enum Relationship {
-    FAMILY("family"),
-    FRIENDS("friends"),
-    ASSOCIATES("associates"),
-    COLLEAGUES("colleagues");
-
-    private final String relation;
-
-    Relationship(String relation) {
-        this.relation = relation;
-    }
-
-    public String getRelation() {
-        return relation;
-    }
-
-    public static Relationship fromString(String text) {
-        for (Relationship relationship : Relationship.values()) {
-            if (relationship.relation.equalsIgnoreCase(text)) {
-                return relationship;
-            }
-        }
-        //We will learn later
-        throw new IllegalArgumentException("No constant with text " + text + " found");
     }
 }
