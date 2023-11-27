@@ -34,16 +34,30 @@ public class CrudOperations {
         }
     }
 
-    void searchByPhoneNumber(AddressBook a, String a1){
+    void searchByPhoneNumber(AddressBook a, String a1) {
         boolean flag = false;
-        for (Person p : a.contactList){
+        for (Person p : a.contactList) {
             if (p.getPhnNo().equalsIgnoreCase(a1)) {
                 System.out.println(p);
                 flag = true;
             }
         }
-        if(!flag){
+        if (!flag) {
             System.out.println("Phone number is not existing");
+        }
+    }
+        void deleteContactByfName(AddressBook a , String a1){
+            boolean flag = false;
+            for (Person p : a.contactList) {
+                if (p.getFname().equalsIgnoreCase(a1)) {
+                    a.contactList.remove(p);
+                    System.out.println("User deleted");
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag){
+                System.out.println("User not found so nothing is deleted");
         }
     }
 }
