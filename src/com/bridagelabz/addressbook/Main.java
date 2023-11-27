@@ -7,7 +7,7 @@ public class Main {
         AddressBook a1 = new AddressBook("Book1");
 
         Scanner sc = new Scanner(System.in);
-        String menu = "Press \n1: Adding a contact\n2: Displaying All Contacts\n3: Search by first name\n4: Search by Phone number\n5: Delete by User First name\n0: To Exit the Program.";
+        String menu = "Press \n1: Adding a contact\n2: Displaying All Contacts\n3: Search by first name\n4: Search by Phone number\n5: Delete by User First name\n6: Update Phone Number\n0: To Exit the Program.";
 
         //Menu based programming
         int input;
@@ -37,6 +37,11 @@ public class Main {
                     System.out.println("Enter the Name you want to delete");
                     String s1 = sc.next();
                     c1.deleteContactByfName(a1,s1);
+                }
+                case 6 -> {
+                    System.out.println("Enter the Name you want to update the phone number");
+                    String s1 = sc.next();
+                    c1.updatePhoneNumberByName(a1,s1);
                 }
                 case 0 -> System.out.println("Bye bye!!");
                 default -> System.out.println("Enter valid option");
