@@ -59,6 +59,13 @@ public class Main {
                     System.out.println("Enter Book Number:");
                     bookno=sc.nextInt();
                 }
+                case 8 -> {
+                    System.out.println("Enter City to display People from that City");
+                    String s1 =sc.next();
+                    for (int i=0;i<AddressBooks.size();i++){
+                        c1.sreachbycity(AddressBooks.get(i),s1);
+                    }
+                }
                 case 0 -> System.out.println("Bye bye!!");
                 default -> System.out.println("Enter valid option");
             }

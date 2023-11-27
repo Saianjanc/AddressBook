@@ -13,10 +13,12 @@ public class CrudOperations {
         String phoneNumber = sc.next();
         System.out.println("Enter ZipCode");
         int zip = sc.nextInt();
+        System.out.println("Enter City");
+        String city = sc.next();
         System.out.println("Enter Relation");
         String relation = sc.next();
         //Person.java constructor
-        Person p1 = new Person(fname,lname,phoneNumber,zip,relation);
+        Person p1 = new Person(fname,lname,phoneNumber,zip,city,relation);
         //added to the address book instance
         a.contactList.add(p1);
     }
@@ -61,13 +63,19 @@ public class CrudOperations {
         }
     }
     void updatePhoneNumberByName(AddressBook a, String a1){
-        boolean flag = false;
         for (Person p : a.contactList){
             if(p.getFname().equalsIgnoreCase(a1)){
                 System.out.println("Enter your new phone Number");
                 String ph = sc.next();
                 p.setPhnNo(ph);
                 System.out.println("Phone Number is updated");
+            }
+        }
+    }
+    void sreachbycity(AddressBook a, String a1) {
+        for (Person p : a.contactList) {
+            if (p.getCity().equalsIgnoreCase(a1)) {
+                System.out.println(p);
             }
         }
     }

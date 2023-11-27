@@ -5,13 +5,15 @@ class Person {
     private String lname;
     private String phnNo;
     private int zipCode;
+    private String city;
     private String relation;
     private Relationship relationship;
-    public Person(String fname, String lname, String phnNo, int zipCode, String relation) {
+    public Person(String fname, String lname, String phnNo, int zipCode, String city,String relation) {
         this.fname = fname;
         this.lname = lname;
         this.phnNo = phnNo;
         this.zipCode = zipCode;
+        this.city = city;
         this.relationship = Relationship.fromString(relation);
     }
 
@@ -22,6 +24,7 @@ class Person {
                 ", lname='" + lname + '\'' +
                 ", phnNo='" + phnNo + '\'' +
                 ", zipCode=" + zipCode +
+                ", city=" + city +
                 ", relation=" + relationship +
                 '}';
     }
@@ -40,6 +43,14 @@ class Person {
 
     public int getZipCode() {
         return zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getRelation() {
