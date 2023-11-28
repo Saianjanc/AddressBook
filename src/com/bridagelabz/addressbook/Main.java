@@ -17,11 +17,11 @@ public class Main {
         AddressBooks.add(a4);
         AddressBooks.add(a5);
         Scanner sc = new Scanner(System.in);
-        String menu = "Press \n1: Adding a contact\n2: Displaying All Contacts\n3: Search by first name\n4: Search by Phone number\n5: Delete by User First name\n6: Update Phone Number\n7: Change AddressBook\n0: To Exit the Program.";
+        String menu = "Press \n1: Adding a contact\n2: Displaying All Contacts\n3: Search by first name\n4: Search by Phone number\n5: Delete by User First name\n6: Update Phone Number\n7: Change AddressBook\n8: Search by City Name\n0: To Exit the Program.";
 
         //Menu based programming
         int bookno,input;
-        System.out.println("Welcome to com.bridagelabz.addressbook.AddressBook");
+        System.out.println("Welcome to AddressBook");
         System.out.println("Enter Book Number:");
         bookno=sc.nextInt();
         do {
