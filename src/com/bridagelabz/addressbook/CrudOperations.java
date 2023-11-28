@@ -75,6 +75,7 @@ public class CrudOperations {
     void sreachbycity(AddressBook a, String a1) {
         for (Person p : a.contactList) {
             if (p.getCity().equalsIgnoreCase(a1)) {
+                System.out.println("Address Book Name:"+a.Name);
                 System.out.println(p);
             }
         }
